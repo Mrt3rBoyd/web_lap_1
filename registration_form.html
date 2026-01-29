@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Student Registration Form</title> 
+
+  <style>
+    body{
+      font-family: Arial, sans-serif;
+      padding:20px;
+    }
+    .form-container{
+      max-width: 700px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+
+    }
+    .form-group{
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input, select, textarea{
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+
+    }
+    .inline{
+      display:flex;
+      gap:10px
+
+    }
+    .inline input{
+      flex:1;
+
+    }
+
+    .options input {
+      width: auto;
+      margin-right: 5px;     
+    }
+    
+    button {
+      width: 100%;
+
+      padding: 10px;
+      font-size: 16px;
+      background-color: green;
+      color: aliceblue;
+
+    }
+
+    button:hover {
+      background-color: darkgreen; 
+      cursor: pointer;      
+    }   
+  </style>
+   
+ </head>
+
+ <body>
+
+<div class="form-container">
+  <h1>Student Registration Form</h1>
+
+  <div class="form-group">
+    <label>Student Name:</label>
+    <div class="inline">
+      <input type="text" placeholder="First Name">
+      <input type="text" placeholder="Last Name">
+    </div>
+
+  </div>
+  <div class="form-group">
+    <label>School ID:</label>
+    <input type="text">
+  </div>
+
+  
+
+  <div class="form-group">
+  <label>Date of Birth:</label>
+  <div class="inline">
+
+    <select>
+      <option value="">Day</option>
+      
+      <script>
+        for (let d = 1; d <= 31; d++) {
+          document.write(`<option value="${d}">${d}</option>`);
+        }
+        
+      </script>
+    </select>
+
+   
+    <select>
+      <option value="">Month</option>
+      <option value="1">January</option>
+      <option value="2">February</option>
+      <option value="3">March</option>
+      <option value="4">April</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">August</option>
+      <option value="9">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+
+    
+    <select>
+      <option value="">Year</option>
+      
+      <script>
+        const Year = new Date().getFullYear();
+        for (let y = Year; y >= 0; y--) {
+          document.write(`<option value="${y}">${y}</option>`);
+        }
+      </script>
+    </select>
+
+  </div>
+</div>
+
+
+  <div class="form-group">
+  <label>Phone number:</label>
+  <div class="inline">
+    <input type="text" value="+855" style="flex:0 0 80px;"> 
+    <input type="tel" placeholder="12345678">                 
+  </div>
+</div>
+
+
+  <div class="form-group">
+    <label>Email:</label>
+    <input type="email">
+  </div>
+
+  <div class="form-group options">
+    <label>Gender: </label>
+    <input type="radio" name="m"> Male
+    <input type="radio" name="f"> Female
+  </div>
+
+  <div class="form-group options">
+    <label>Department: </label>
+    <input type="radio" name = "cs"> CS
+    <input type="radio" name = "tn"> TN
+    <input type="radio" name = "db"> DB
+  </div>
+
+  <div class="form-group">
+    <label>Course:</label>
+    <select>
+    <option>Select Course</option>
+    <option>AWS / Azure / GCP Cloud Services</option>
+    <option>CEH (Certified Ethical Hacker)</option>
+    <option>C</option>
+    <option>C++</option>
+    <option>Cloud Computing (AWS/Azure/GCP)</option>
+    <option>CompTIA Security+</option>
+    <option>Computer Hardware Fundamentals</option>
+    <option>Cryptography & Security Protocols</option>
+    <option>Database Administration</option>
+    <option>Database Systems (SQL/NoSQL)</option>
+    <option>Deep Learning</option>
+    <option>Ethical Hacking / Penetration Testing</option>
+    <option>Flutter / React Native Mobile App Development</option>
+    <option>HTML & CSS</option>
+    <option>Help Desk / Technical Support</option>
+    <option>Incident Response & Threat Hunting</option>
+    <option>IT Project Management</option>
+    <option>IT Support & Troubleshooting</option>
+    <option>Java</option>
+    <option>JavaScript</option>
+    <option>Machine Learning / AI</option>
+    <option>Mobile App Development (Flutter/React Native)</option>
+    <option>Network Security</option>
+    <option>Networking Basics</option>
+    <option>Networking Fundamentals</option>
+    <option>Node.js</option>
+    <option>OSCP</option>
+    <option>Operating Systems (Windows/Linux)</option>
+    <option>PHP</option>
+    <option>Python</option>
+    <option>React</option>
+    <option>Reverse Engineering</option>
+    <option>Secure Coding Practices</option>
+    <option>SIEM & Security Operations</option>
+    <option>Software Engineering</option>
+    <option>Web Application Security</option>
+    <option>Web Development</option>
+
+
+    </select>
+  </div>
+
+<div class="form-group">
+  <label>City / Province:</label>
+  <select>
+    <option>Select Province</option>
+    <option>Banteay Meanchey</option>
+    <option>Battambang</option>
+    <option>Kampong Cham</option>
+    <option>Kampong Chhnang</option>
+    <option>Kampong Speu</option>
+    <option>Kampong Thom</option>
+    <option>Kampot</option>
+    <option>Kandal</option>
+    <option>Kep</option>
+    <option>Koh Kong</option>
+    <option>Kratie</option>
+    <option>Mondulkiri</option>
+    <option>Oddar Meanchey</option>
+    <option>Pailin</option>
+    <option>Phnom Penh</option>
+    <option>Preah Sihanouk</option>
+    <option>Preah Vihear</option>
+    <option>Prey Veng</option>
+    <option>Pursat</option>
+    <option>Ratanakiri</option>
+    <option>Siem Reap</option>
+    <option>Stung Treng</option>
+    <option>Svay Rieng</option>
+    <option>Takeo</option>
+    <option>Tboung Khmum</option>
+  </select>
+</div>
+
+  <div class="form-group">
+    <label>Student Photo: </label>
+    <input type="file">
+  </div>
+
+  <div class="form-group">
+    <label>Current Address: </label>
+    <textarea rows="4"></textarea>
+  </div>
+
+  <button type="submit">Register</button>
+</div>
+
+</body>
+</html>
