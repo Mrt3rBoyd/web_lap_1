@@ -18,7 +18,7 @@
     }
 
     header {
-      background-color: black;
+      background-color: rgb(1, 102, 120);
       color: white;
       padding: 15px 20px;
       display: flex;
@@ -29,6 +29,11 @@
 
     header h1 {
       font-size: 24px;
+      text-align: center;
+
+    }
+    h1 {
+      text-align: center;
     }
 
     nav ul {
@@ -86,12 +91,23 @@
       color: #555;
     }
 
-    /*.box:hover {
-      transform: translateY(-5px);
+    .box:hover {
+      transform: translateY(5px);
+      background-color: whitesmoke;
     }
 
    
-   */
+   
+   @media (max-width: 992px) {
+      .boxes {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      .boxes {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
@@ -101,14 +117,14 @@
     <nav>
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">Courses</a></li>
+        <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
       </ul>
     </nav>
   </header>
 
   <section>
-    <h1>Our Courses</h1>
+    <h1>Web Development Courses</h1>
     <div class="boxes">
       <div class="box">
         <img src="web-design-concept-with-drawings.jpg" alt="Web Design">
@@ -128,6 +144,51 @@
         <p>Learn to build Responsive UI websites</p>
       </div>
     </div>
+    
+    <h1>Information Technology Courses</h1>
+    <div class="boxes">
+      <div class="box">
+        <img src="computer-net.jpg" alt="Computer Science">
+        <h3>Computer Networking</h3>
+        <p>provides the foundational knowledge of how systems communicate</p>
+      </div>
+
+      <div class="box">
+        <img src="cloud-computing.jpg" alt="Computer Science">
+        <h3>Cloud Computing</h3>
+        <p>Understanding cloud fundamentals, cloud service models, and security protocols to starting a career in cloud computing.</p>
+      </div>
+
+      <div class="box">
+        <img src="sys-adm-1.jpg" alt="Computer Science">
+        <h3>System Administrator</h3>
+        <p>Learn the basics of system administration and managing IT infrastructure.</p>
+      </div>
+
+    </div>
+
+    <h1>Cybersecurity Courses</h1>
+    <div class="boxes">
+      <div class="box">
+        <img src="net-sec.webp" alt="Computer Science">
+        <h3>Network Security</h3>
+        <p>Essential to protect sensitive data and maintain business continuity against evolving threats.</p>
+      </div>
+
+      <div class="box">
+        <img src="ethi-hacker.webp" alt="Computer Science">
+        <h3>Ethical Hacking</h3>
+        <p>Essential to defend against cyberattacks</p>
+      </div>
+
+      <div class="box">
+        <img src="linux.jpg" alt="Computer Science">
+        <h3>Linux Essentials</h3>
+        <p>Linux powers most cloud, server, and development environments. provides a vital foundation for modern IT careers.</p>
+      </div>
+
+    </div>
+      
   </section>
 
 </body>
