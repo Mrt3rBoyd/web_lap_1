@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Courses</title>
+  <style>
+  
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: black;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      font-size: 24px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background-color: grey;
+      border-radius: 5px;
+    }
+
+ 
+    .boxes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .box {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      text-align: center;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .box img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .box h3 {
+      margin: 15px 0 10px;
+      font-size: 20px;
+    }
+
+    .box p {
+      padding: 0 10px 15px;
+      font-size: 16px;
+      color: #555;
+    }
+
+    /*.box:hover {
+      transform: translateY(-5px);
+    }
+
+   
+   */
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>MyWebsite</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h1>Our Courses</h1>
+    <div class="boxes">
+      <div class="box">
+        <img src="web-design-concept-with-drawings.jpg" alt="Web Design">
+        <h3>Web Design</h3>
+        <p>Learn to build modern websites</p>
+      </div>
+
+      <div class="box">
+        <img src="Js.png" alt="JavaScript">
+        <h3>JavaScript</h3>
+        <p>Learn JavaScript programming</p>
+      </div>
+
+      <div class="box">
+        <img src="responsive-design-1706284786147-2x.avif" alt="Responsive UI">
+        <h3>Responsive UI</h3>
+        <p>Learn to build Responsive UI websites</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
