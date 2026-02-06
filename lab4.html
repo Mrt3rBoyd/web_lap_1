@@ -4,30 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
 </head>
 <body>
-    <h1>Leap year or not</h1>
-    <button onclick="myFunction()">Try it</button>
 
+<h1>Leap year or not</h1>
+<button onclick="myFunction()">Try it</button>
 <p id="demo"></p>
 
 <script>
 function myFunction() {
+  let year = Number(prompt("Please enter year:", "2026"));
   let text;
-  let year = prompt("Please enter year:", "2026");
 
-  if (year % 4 == 0  ){
-    text = year + ` is leap year.`;
-  }else {
-    text = year+ ` is not a leap year.`;
+  if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+    text = year + " is leap year.";
+  } else {
+    text = year + " is not a leap year.";
   }
-  
+
   document.getElementById("demo").innerHTML = text;
 }
+
 </script>
 
 
+<h1>Array Join Result</h1>
+    <button onclick="Myfunction()">Enter the color</button>
     
+    <h3 >The colors are: </h3>
+    <div id="display"></div>
+<script>
+    function Myfunction() {
+        let n = prompt("How many colors do you want?");
+        let myColor = [];
+        for(let j = 0; j < n; j++) {
+            myColor[j] = prompt("Enter color " + (j + 1));
+            style = "color: " + myColor[j];
+        }
+        let result = myColor.join(",");
+        document.getElementById("display").innerText = result;
+    }
+
+</script>
+</script>
+
+<h1>Live Clock</h1>
+<p id="testing"></p>
+<button onclick="showAlert()">Stop Clock</button>
+
+<script>
+let greet;
+
+function showAlert() {
+    alert("Stop the clock now");
+    clearInterval(myInterval);
+}
+
+function showTime() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    document.getElementById("testing").innerHTML =
+        `Current time: ${timeString}<br>${greetbyTime()}`;
+}
+
+function greetbyTime() {
+    const d = new Date();
+    const hour = d.getHours();
+
+    if (hour >= 5 && hour < 12) {
+        greet = "Good Morning";
+    } else if (hour >= 12 && hour < 16) {
+        greet = "Good Afternoon";
+    } else {
+        greet = "Good Evening";
+    }
+    return greet;
+}
+
+const myInterval = setInterval(showTime, 1000);
+</script>
+
 </body>
 </html>
