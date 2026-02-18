@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page A</title>
+</head>
+<body>
+
+<h1>Page A </h1>
+
+<p>Scenario A</p>
+
+<a href="pageB.html?mode=A" target="_blank" rel="opener">
+    Open Page B 
+</a>
+
+<br><br>
+
+<p>Scenario B</p>
+
+<a href="pageB.html?mode=B" target="_blank">
+    Open Page B 
+</a>
+
+
+
+<div class="card w-96 bg-white shadow-xl p-6">
+    <h2 class="text-xl font-bold mb-4 text-center">
+        Address Selector
+    </h2>
+
+   
+    <label class="label">Province</label>
+    <select id="province" class="select select-bordered w-full mb-3">
+        <option value="">Select Province</option>
+    </select>
+
+   
+    <label class="label">District</label>
+    <select id="district" class="select select-bordered w-full mb-3" disabled>
+        <option value="">Select District</option>
+    </select>
+
+    
+    <label class="label">Commune</label>
+    <select id="commune" class="select select-bordered w-full mb-3" disabled>
+        <option value="">Select Commune</option>
+    </select>
+
+
+    <label class="label">Village</label>
+    <select id="village" class="select select-bordered w-full" disabled>
+        <option value="">Select Village</option>
+    </select>
+
+</body>
+
+
+</html>

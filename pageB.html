@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page B</title>
+</head>
+<body>
+
+<h1>Page B</h1>
+<p id="info"></p>
+
+<script>
+
+    const params = new URLSearchParams(window.location.search);
+    const mode = params.get("mode");
+
+    if (mode === "A") {
+        document.getElementById("info").innerText;
+
+        if (window.opener) {
+            window.opener.location = "pageC.html";
+        }
+    }
+
+    if (mode === "B") {
+        document.getElementById("info").innerText;
+
+        setTimeout(function () {
+            window.location.href = "pageC.html";
+        }, 5000);
+    }
+</script>
+
+</body>
+</html>
