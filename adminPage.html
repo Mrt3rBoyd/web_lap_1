@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+
+<header class="flex justify-between items-center mb-6">
+    <h1 class="text-3xl font-bold">Admin Dashboard</h1>
+    <button 
+        onclick="logout()" 
+        class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+        Logout
+    </button>
+</header>
+
+<main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div id="alerts" class="bg-yellow-100 p-4 rounded shadow">
+        <h3 class="text-xl font-semibold mb-2">Patient Alerts</h3>
+        <div class="text-3xl font-bold">0</div>
+    </div>
+
+    <div class="bg-blue-100 p-4 rounded shadow">
+        <h3 class="text-xl font-semibold mb-2">Bed Availability</h3>
+        <div class="text-3xl font-bold">12</div>
+    </div>
+
+    <div class="bg-green-100 p-4 rounded shadow">
+        <h3 class="text-xl font-semibold mb-2">Medicine Orders</h3>
+        <div class="text-3xl font-bold">5</div>
+    </div>
+
+    <div class="bg-purple-100 p-4 rounded shadow">
+        <h3 class="text-xl font-semibold mb-2">Staff Directory</h3>
+        <div class="text-3xl font-bold">24</div>
+    </div>
+
+    <div class="bg-gray-200 p-4 rounded shadow">
+        <h3 class="text-xl font-semibold mb-2">Database Status</h3>
+        <div class="text-3xl font-bold text-green-600">Online</div>
+    </div>
+
+</main>
+
+<script>
+
+function getCookie(name) {
+    return document.cookie.split('; ').find(row => row.startsWith(name + '='))?.split('=')[1];
+}
+
+
+if (getCookie("role") !== "admin") {
+    window.location.href = "errorPage.html";
+}
+
+
+function logout() {
+    document.cookie = "role=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    window.location.href = "/login.html";
+}
+
+
+setInterval(() => {
+    const alerts = document.getElementById("alerts").querySelector("div");
+    alerts.innerText = Math.floor(Math.random() * 5);
+}, 10000);
+
+</script>
+
+</body>
+</html>

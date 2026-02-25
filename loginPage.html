@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>login</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+<h1>Clinical Information System Login Page</h1>
+
+<div>
+    <label>Role Selection:</label>
+    <select id="role">
+        <option value="">Select role</option>
+        <option value="nurse">Nurse</option>
+        <option value="admin">Admin</option>
+        <option value="anonymous">Anonymous</option>
+    </select>
+</div>
+
+<div>
+    <label>Practitioner ID:</label>
+    <input 
+        type="text"
+        id="username"
+        class="w-full mt-1 px-4 py-2 border rounded-lg"
+        placeholder="Practitioner ID"
+        required
+    >
+</div>
+
+<div>
+    <label>Password:</label>
+    <input 
+        type="password"
+        id="password"
+        class="w-full mt-1 px-4 py-2 border rounded-lg"
+        placeholder="Enter your password"
+        required
+    >
+    <p id="pwFeedback" class="text-sm mt-1"></p>
+</div>
+
+<button 
+    id="loginBtn"
+    class="w-full bg-blue-600 text-white py-2 rounded-lg mt-3"
+>
+    Login
+</button>
+
+<script>
+
+function getCookie(name){
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if(parts.length === 2) return parts.pop().split(';').shift();
+}
+
+const activeRole = getCookie("role");
+
+if(activeRole === "nurse"){
+    window.location.href = "nursePage.html";
+}
+else if(activeRole === "admin"){
+    window.location.href = "adminPage.html";
+}
+
+
+
+const passwordInput = document.getElementById("password");
+const feedback = document.getElementById("pwFeedback");
+
+passwordInput.addEventListener("input", function(){
+    const value = passwordInput.value;
+
+    if(value.length < 6){
+        feedback.innerText = "Password too short";
+        feedback.className = "text-red-500 text-sm";
+    } 
+    else {
+        feedback.innerText = "Password strength OK";
+        feedback.className = "text-green-500 text-sm";
+    }
+});
+
+
+
+document.getElementById("loginBtn").addEventListener("click", function(){
+
+    const role = document.getElementById("role").value;
+
+    if(role === ""){
+        alert("Please select role");
+        return;
+    }
+
+   
+    document.cookie = "role=" + role + "; path=/";
+
+    if(role === "nurse"){
+        window.location.href = "nursePage.html";
+    }
+    else if(role === "admin"){
+        window.location.href = "adminPage.html";
+    }
+    else{
+        window.location.href = "unknownPage.html";
+    }
+
+});
+
+</script>
+
+</body>
+</html>
